@@ -1,0 +1,18 @@
+<p>Data from phones.json</p>
+
+<div>
+    <table>
+        <thead></thead>
+        <tbody>
+            <tr *ngFor="let item of phoneList">
+                <td><figure><img src="../../assets/{{item.imageUrl}}" alt=""></figure>
+                 </td>
+                <td>
+                    <ul><li><a href="../../assets/phones/{{item.id}}.json">{{item.name}}</a></li>
+                        <li>{{item.snippet}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
