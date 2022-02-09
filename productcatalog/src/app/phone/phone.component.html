@@ -1,1 +1,54 @@
-<p>phone works!</p>
+<section class="phoneSite" *ngIf="allReady">
+    <section class="row g-0">
+        <article class="leftSite col-sm-4 float-start">
+                <figure><img id="big-image" class="mt-5 mw-100" src="../../assets/{{ chosenPhone.images[0] }}" alt="image of {{ chosenPhone.id }}"></figure>
+        </article>
+        <article class="col-sm-8 float-end">
+            <section class="rightSite">
+                <h1 class="header">{{ chosenPhone.name }}</h1>
+                <p>{{ chosenPhone.description }}</p>
+                <div class="row p-5 m2">
+                    <div class="phonesImages col-3 m-2 rounder-2" *ngFor="let image of chosenPhone.images">
+                        <figure class="smallImages"><img (click)="changeImage($event)" class="pointer w-100" src="{{ '../../../../assets/' + image}}" alt="image of {{ chosenPhone.id }}"></figure>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <article class="bottomSite row">
+            <div class="col-6 col-md m-5">
+                <h2>Availabilty and Networks</h2>
+                <p>{{  chosenPhone.availability }}</p>
+            </div>
+            <div class="col-6 col-md m-5">
+                <h2>Battery</h2>
+                <h4>Type</h4>
+                <p>{{ chosenPhone.battery.type }}</p>
+                <h4>Talk Time</h4>
+                <p>{{ chosenPhone.battery.talkTime }}</p>
+                <h4>Standby time (max)</h4>
+                <p>{{ chosenPhone.battery.standbyTime }}</p>
+            </div>
+            <div class="col-6 col-md m-5">
+                <h2>Storafe and Memory</h2>
+                <h4>RAM</h4>
+                <p>{{ chosenPhone.storage.ram }}</p>
+                <h4>Internal Storage</h4>
+                <p>{{ chosenPhone.storage.flash }}</p>
+            </div>
+            <div class="col-6 col-md m-5">
+                <h2>Connectivity</h2>
+                <h4>Network Support</h4>
+                <h4>WiFi</h4>
+                <p>{{ chosenPhone.connectivity.wifi }}</p>
+                <h4>Bluetooth</h4>
+                <p>{{ chosenPhone.connectivity.bluetooth }}</p>
+                <h4>Infrared</h4>
+                <p *ngIf="chosenPhone.connectivity.infrared == false"><fa-icon [icon]="faTimes"></fa-icon></p>
+                <p *ngIf="chosenPhone.connectivity.infrared == true"><fa-icon [icon]="faCheck"></fa-icon></p>
+                <h4>GPS</h4>
+                <p *ngIf="chosenPhone.connectivity.gps == false" ><fa-icon [icon]="faTimes"></fa-icon></p>
+                <p *ngIf="chosenPhone.connectivity.gps == true"><fa-icon [icon]="faCheck"></fa-icon></p>
+          </div>
+        </article>
+    </section>
+</section>

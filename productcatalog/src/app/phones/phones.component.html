@@ -1,18 +1,34 @@
-<p>Data from phones.json</p>
-
-<div>
-    <table>
-        <thead></thead>
-        <tbody>
-            <tr *ngFor="let item of phoneList">
-                <td><figure><img src="../../assets/{{item.imageUrl}}" alt=""></figure>
-                 </td>
-                <td>
-                    <ul><li><a href="../../assets/phones/{{item.id}}.json">{{item.name}}</a></li>
-                        <li>{{item.snippet}}</li>
-                    </ul>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<section class="searchSection">
+  <p>Search:</p>
+  <input class="search-control" type="text" [(ngModel)]="searchPhones" />
+  <select name="form-select" (change)="sort($event)">
+    <option selected></option>
+    <option value="age">newest</option>
+    <option value="id">alphabetical</option>
+  </select>
+</section>
+<section class="phonesSection" (sentEvent="searchPhones=$event")>
+  <table>
+    <thead></thead>
+    <tbody>
+      <tr *ngFor="let phone of phones | phoneFilter: searchPhones | orderBy: phonesHeader">
+        <td>
+          <figure>
+            <img
+              src="../../assets/{{ phone.imageUrl }}"
+              alt="image from phone"
+            />
+          </figure>
+        </td>
+        <td>
+          <ul>
+            <li>
+              <a routerLink="phones/{{ phone.id }}">{{ phone.id }}</a>
+            </li>
+            <li>{{ phone.snippet }}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PhonesComponent } from './phones/phones.component';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'productcatalog';
+  @Input()searchPhones!: PhonesComponent;
   
 }
