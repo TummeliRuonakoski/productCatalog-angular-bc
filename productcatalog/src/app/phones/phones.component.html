@@ -1,13 +1,12 @@
 <section class="searchSection">
   <p>Search:</p>
-  <input class="search-control" type="text" [(ngModel)]="searchPhones" />
+  <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchPhones" />
   <select name="form-select" (change)="sort($event)">
-    <option selected></option>
     <option value="age">newest</option>
     <option value="id">alphabetical</option>
   </select>
 </section>
-<section class="phonesSection" (sentEvent="searchPhones=$event")>
+<section class="phonesSection">
   <table>
     <thead></thead>
     <tbody>
@@ -23,7 +22,7 @@
         <td>
           <ul>
             <li>
-              <a routerLink="phones/{{ phone.id }}">{{ phone.id }}</a>
+              <a routerLink="{{ phone.id }}">{{ phone.name }}</a>
             </li>
             <li>{{ phone.snippet }}</li>
           </ul>

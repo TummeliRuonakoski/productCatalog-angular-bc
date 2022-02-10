@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PhoneService } from '../phone.service';
 import { Phones } from './phones.interfaces';
 import { PhonesPipe } from './phones.pipe';
+import { OrderPipe } from 'ngx-order-pipe';
 
 
 @Component({
@@ -18,12 +19,10 @@ export class PhonesComponent implements OnInit {
   phones!: Phones[];
   phonesHeader: string = '';
 
-  // phones: Phones[] = [];
-  // searchList! : any;
   objectKeys = Object.keys;
   items = { keyOne: 'newest', keyTwo: 'alphabetical'};
 
-  constructor(private phoneService: PhoneService) {}
+  constructor(private phoneService: PhoneService, private orderPipe: OrderPipe) {}
 
   getAllPhones(): void{
     this.phoneService.getAllPhones().subscribe(phones => {

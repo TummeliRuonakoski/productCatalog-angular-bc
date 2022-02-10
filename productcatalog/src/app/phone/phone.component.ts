@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { PhoneService } from '../phone.service';
+import { Phone } from './phone.interface';
 
 
 @Component({
@@ -46,6 +47,5 @@ export class PhoneComponent implements OnInit {
   changeImage(event: any){
     this.imageUrl = event.target.getAttribute('src');
     document.getElementById('big-image')?.setAttribute('src',this.imageUrl);
-
   }
 }
