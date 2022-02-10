@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PhoneService } from '../phone.service';
 import { Phones } from './phones.interfaces';
-import { PhonesPipe } from './phones.pipe';
 import { OrderPipe } from 'ngx-order-pipe';
 
 
