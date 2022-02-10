@@ -1,0 +1,26 @@
+.body{
+    margin: 20px;
+}
+
+.body >*{
+    padding: 5px;
+}
+
+
+.pointer{
+    border-style: solid;
+    border-color: darkslategrey;
+    padding: 5px;
+    
+}
+
+a{
+    color: darkslategrey;
+}
+
+h2{
+    color: darkslategrey;
+}
+.footer{
+    text-align: center;
+}

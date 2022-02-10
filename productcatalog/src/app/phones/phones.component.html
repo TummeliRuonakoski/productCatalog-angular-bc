@@ -1,33 +1,37 @@
-<section class="searchSection">
-  <p>Search:</p>
-  <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchPhones" />
-  <select name="form-select" (change)="sort($event)">
-    <option value="age">newest</option>
-    <option value="id">alphabetical</option>
-  </select>
-</section>
-<section class="phonesSection">
-  <table>
-    <thead></thead>
-    <tbody>
-      <tr *ngFor="let phone of phones | phoneFilter: searchPhones | orderBy: phonesHeader">
-        <td>
-          <figure>
-            <img
-              src="../../assets/{{ phone.imageUrl }}"
-              alt="image from phone"
-            />
-          </figure>
-        </td>
-        <td>
-          <ul>
-            <li>
-              <a routerLink="{{ phone.id }}">{{ phone.name }}</a>
-            </li>
-            <li>{{ phone.snippet }}</li>
-          </ul>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<section class="body">
+  <h1>Product catalog</h1>
+  <aside class="searchSection">
+    <input class="search-control" type="text" placeholder="Search" [(ngModel)]="searchPhones" />
+    <select name="form-select" (change)="sort($event)">
+      <option value="age">newest</option>
+      <option value="id">alphabetical</option>
+    </select>
+  </aside>
+  <section class="phonesSection">
+    <table>
+      <tbody class="tbody">
+        <tr *ngFor="let phone of phones | phoneFilter: searchPhones | orderBy: phonesHeader">
+          <td>
+            <figure>
+              <img
+                src="../../assets/{{ phone.imageUrl }}"
+                alt="image from phone"
+              />
+            </figure>
+          </td>
+          <td>
+            <ul>
+              <li>
+                <h2><a routerLink="{{ phone.id }}">{{ phone.name }}</a></h2>
+              </li>
+              <li>{{ phone.snippet }}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <footer>
+    <p class="footer">&#169; Tummeli Ruonakoski 2022</p>
+  </footer>
 </section>

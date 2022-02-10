@@ -1,3 +1,37 @@
+.body{
+    margin: 20px;
+}
+
+.body >*{
+    padding: 10px;
+}
+
+h1{
+text-transform: uppercase;
+color: darkslategrey;
+}
+
+.searchSection{
+    width: 20%;
+    float: left;
+}
+
+.searchSection >*{
+    margin: 1px;
+}
+
+.tbody{
+    vertical-align: top;
+}
+
 ul{
     list-style-type: none;
+}
+
+a{
+    color: darkslategrey;
+}
+
+.footer{
+    text-align: center;
 }

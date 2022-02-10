@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { PhoneService } from '../phone.service';
-import { Phone } from './phone.interface';
 
 
 @Component({
