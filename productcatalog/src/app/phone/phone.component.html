@@ -3,7 +3,7 @@
         <p><a class="link" routerLink="/" >front page</a></p>
         <section class="row g-0">
             <article class="leftSite col-sm-4 float-start">
-                    <figure><img id="big-image" class="mt-5 mw-100" src="../../assets/{{ chosenPhone.images[0] }}" alt="image of {{ chosenPhone.id }}"></figure>
+                    <figure><img id="big-image" class="mt-5 mw-100" src="{{ 'assets/' + chosenPhone.images[0] }}" alt="image of {{ chosenPhone.id }}"></figure>
             </article>
             <article class="col-sm-8 float-end">
                 <section class="rightSite">
@@ -11,7 +11,7 @@
                     <p>{{ chosenPhone.description }}</p>
                     <div class="row p-5 m2">
                         <div class="phonesImages col-3 m-2 rounder-2" *ngFor="let image of chosenPhone.images">
-                            <figure class="smallImages"><img (click)="changeImage($event)" class="pointer w-100" src="{{ '../../../../assets/' + image}}" alt="image of {{ chosenPhone.id }}"></figure>
+                            <figure class="smallImages"><img (click)="changeImage($event)" class="pointer w-100" src="{{  'assets/' + image}}" alt="image of {{ chosenPhone.id }}"></figure>
                         </div>
                     </div>
                 </section>
